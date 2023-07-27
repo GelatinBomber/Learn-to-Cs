@@ -8,7 +8,7 @@
 
 
 // 수정 사항
-    // if로 자릿수를 하나하나 체크했는데, List를 이용해서 한번에 해보자.
+    // 기존에 if로 자릿수를 하나하나 체크했는데, List를 이용해서 한번에 해보자.
 
 
 public static class Client
@@ -40,13 +40,13 @@ public static class Client
 
                         List<int> AnswerNumList = new List<int>();  // 각 자릿수를 리스트에 담기
                         AnswerNumList.Add(AnswerNum % 10);
-                        AnswerNumList.Add(AnswerNum % 100 - AnswerNum % 10);
-                        AnswerNumList.Add(AnswerNum % 1000 - AnswerNum % 100);
+                        AnswerNumList.Add((AnswerNum % 100 - AnswerNum % 10)/10);
+                        AnswerNumList.Add((AnswerNum % 1000 - AnswerNum % 100)/100);
 
                         List<int> QuestionNumList = new List<int>();
                         QuestionNumList.Add(QuetionNum % 10);
-                        QuestionNumList.Add(QuetionNum % 100 - QuetionNum % 10);
-                        QuestionNumList.Add(QuetionNum % 1000 - QuetionNum % 100);
+                        QuestionNumList.Add((QuetionNum % 100 - QuetionNum % 10)/10);
+                        QuestionNumList.Add((QuetionNum % 1000 - QuetionNum % 100)/100);
 
                         // 스트라이크 개수 세기
                         for (int i = 0; i < 3; i++)
