@@ -16,10 +16,10 @@
 //            Console.WriteLine();
 
 //            // 세로 벽
-//            for (int i = 0;i < ySize-2; i++)
+//            for (int i = 0; i < ySize - 2; i++)
 //            {
 //                Console.Write("■");
-//                for (int k  = 0; k < xSize-2; k++)
+//                for (int k = 0; k < xSize - 2; k++)
 //                {
 //                    Console.Write("□");
 //                }

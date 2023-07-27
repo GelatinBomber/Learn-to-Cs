@@ -12,6 +12,8 @@
 // 카운트 다운 추가
 
 
+using System.ComponentModel;
+
 public static class Client
 {
     public static void Main()
@@ -35,19 +37,22 @@ public static class Client
             AnswerNumList.Add((AnswerNum % 1000 - AnswerNum % 100) / 100);
 
 
-            bool isSameValue1 = AnswerNumList[0] != AnswerNumList[1];
-            bool isSameValue2 = AnswerNumList[1] != AnswerNumList[2];
-            bool isSaneValue3 = AnswerNumList[2] != AnswerNumList[0];
+            bool isSameValue1 = AnswerNumList[0] == AnswerNumList[1];
+            bool isSameValue2 = AnswerNumList[1] == AnswerNumList[2];
+            bool isSaneValue3 = AnswerNumList[2] == AnswerNumList[0];
+            bool isStop = (isSameValue1 || isSameValue2 || isSaneValue3) == false;
 
-            if (isSameValue1 && isSameValue2 && isSaneValue3)
+
+            if (isStop)             
             {
                 break;
             }
 
+
         }
 
         Console.WriteLine($"연습용 정답은 [ {AnswerNum} ] 입니다.");
-        
+
         int Count = 1;  // 카운트 다운 변수 설정
         int Turn = 3;   // 턴 수 설정
 
@@ -57,7 +62,7 @@ public static class Client
             Console.WriteLine($"[ {Count} ] 번째 턴입니다."); // 턴 알려주기.
             Console.WriteLine($"[ {Turn - Count + 1} ] 번의 기회가 남았습니다.");
             Count++;
-            
+
 
             Console.WriteLine("3 자리 정수를 입력하세요.");   // 사용자에게 명령하기
             string input = Console.ReadLine();  // 사용자로부터 3자리 정수를 받아서 input에 대입
