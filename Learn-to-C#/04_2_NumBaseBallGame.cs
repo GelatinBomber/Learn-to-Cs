@@ -48,12 +48,34 @@ public static class Client
                         QuestionNumList.Add(QuetionNum % 100 - QuetionNum % 10);
                         QuestionNumList.Add(QuetionNum % 1000 - QuetionNum % 100);
 
-                        // 스트라이크 수 세기
-                        for (int i = 0;)
+                        // 스트라이크 개수 세기
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if (AnswerNumList[i] == QuestionNumList[i])
+                            {
+                                StrikeNum++;
+                            }
+                        }
+
+                        // 볼 개수 세기
+                        for (int i = 0; i<3; i++)
+                        {
+                            for (int j = 0; j<3; j++)
+                            {
+                                if (AnswerNumList[i] == QuestionNumList[j])
+                                {
+                                    BallNum++;
+                                }
+                            }
+                        }
+                        // 볼 개수가 스크라이크 개수를 포함하고 있으니까 개수 빼기
+                        BallNum -= StrikeNum;
+
 
 
                         // 스트라이크 수와 볼 수를 확인 후 출력하기
-                        Console.WriteLine($"스트라이크 수는 {StrikeNum} 입니다.");
+                        Console.WriteLine($"스트라이크 개수는 {StrikeNum} 입니다.");
+                        Console.WriteLine($"볼 개수는 {BallNum} 입니다.");
                     }
                 }
                 else // 3 자리 정수가 아니면
