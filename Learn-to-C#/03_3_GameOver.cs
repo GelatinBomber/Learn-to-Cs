@@ -1,15 +1,19 @@
-﻿public class GameOver
+﻿namespace Earthworm
 {
-    public bool WallCrash(ref int xPlayer, ref int yPlayer, int xWallSize, int yWallSize)
+    public class GameOver
     {
-        bool isWallCrash = false;
-        bool isSameX = xPlayer == xWallSize;
-        bool isSameY = yPlayer == yWallSize;
-        if (isSameX || isSameY)
+        public bool WallCrash(ref int xPlayer, ref int yPlayer, int xWallSize, int yWallSize)
         {
-            isWallCrash = true;
-            Console.WriteLine("벽과 충돌!! Game Over");
+            bool isWallCrash = false;
+            bool isSameX = xPlayer == xWallSize;
+            bool isSameY = yPlayer == yWallSize;
+            if (isSameX || isSameY)
+            {
+                isWallCrash = true;
+                Console.WriteLine("벽과 충돌!! Game Over");
+            }
+            return isWallCrash;
         }
-        return isWallCrash;
     }
 }
+

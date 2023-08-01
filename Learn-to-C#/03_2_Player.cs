@@ -1,25 +1,24 @@
-﻿
-
-using System.Security.Cryptography.X509Certificates;
-
-public class Player
+﻿namespace Earthworm
 {
-    public void PlayerPosition(ref int xPlayer, ref int yPlayer)
+    public class Player
     {
-        Console.SetCursorPosition(xPlayer, yPlayer);
-        Console.Write("◈");
-        Console.CursorVisible = false;
-
-        if (Console.KeyAvailable)
+        public void PlayerPosition(ref int xPlayer, ref int yPlayer)
         {
-            ConsoleKeyInfo cki = Console.ReadKey();
+            Console.SetCursorPosition(xPlayer, yPlayer);
+            Console.Write("◈");
+            Console.CursorVisible = false;
 
-            switch (cki.Key)
+            if (Console.KeyAvailable)
             {
-                case ConsoleKey.LeftArrow: { xPlayer -= 2; break; }
-                case ConsoleKey.RightArrow: { xPlayer += 2; break; }
-                case ConsoleKey.UpArrow: { yPlayer--; break; }
-                case ConsoleKey.DownArrow: { yPlayer++; break; }
+                ConsoleKeyInfo cki = Console.ReadKey();
+
+                switch (cki.Key)
+                {
+                    case ConsoleKey.LeftArrow: { xPlayer -= 2; break; }
+                    case ConsoleKey.RightArrow: { xPlayer += 2; break; }
+                    case ConsoleKey.UpArrow: { yPlayer--; break; }
+                    case ConsoleKey.DownArrow: { yPlayer++; break; }
+                }
             }
         }
     }

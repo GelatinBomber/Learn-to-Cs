@@ -1,31 +1,32 @@
-﻿
-
-public class GameSystem
+﻿namespace Earthworm
 {
-    public void Wall(int xWallSize, int yWallSize)
+    public class GameSystem
     {
-        for (int i = 0; i < xWallSize; i++)
+        public void Wall(int xWallSize, int yWallSize)
         {
-            Console.Write("■");
-        }
-        Console.WriteLine();
-
-        for (int i = 0;i < yWallSize - 2; i++)
-        {
-            Console.Write("■");
-            for (int j = 0; j < xWallSize - 2; j++)
+            for (int i = 0; i < xWallSize; i++)
             {
-                Console.Write("□");
+                Console.Write("■");
             }
-            Console.WriteLine("■");
+            Console.WriteLine();
+
+            for (int i = 0; i < yWallSize - 2; i++)
+            {
+                Console.Write("■");
+                for (int j = 0; j < xWallSize - 2; j++)
+                {
+                    Console.Write("□");
+                }
+                Console.WriteLine("■");
+            }
+
+            for (int i = 0; i < xWallSize; i++)
+            {
+                Console.Write("■");
+            }
+            Console.WriteLine();
         }
 
-        for (int i = 0; i < xWallSize; i++)
-        {
-            Console.Write("■");
-        }
-        Console.WriteLine();
+        //public bool GameOver(ref int xP)
     }
-
-    //public bool GameOver(ref int xP)
 }
