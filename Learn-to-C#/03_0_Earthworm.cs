@@ -1,4 +1,6 @@
-﻿namespace Earthworm
+﻿/*
+
+namespace Earthworm
 {
     public static class Client
     {
@@ -43,3 +45,4 @@
     }
 }
 
+*/

@@ -1,4 +1,6 @@
-﻿namespace Earthworm
+﻿/*
+
+namespace Earthworm
 {
     public class GameSystem
     {
@@ -30,3 +32,5 @@
         //public bool GameOver(ref int xP)
     }
 }
+
+*/

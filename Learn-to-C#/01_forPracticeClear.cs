@@ -1,4 +1,6 @@
-﻿namespace ForPractice
+﻿/*
+
+namespace ForPractice
 {
     public static class Client
     {
@@ -17,3 +19,4 @@
         }
     }
 }
+*/

@@ -8,19 +8,62 @@
 
 
 // 수정 사항
-// 기존에 if로 자릿수를 하나하나 체크했는데, List를 이용해서 한번에 해보자.
-/*
+// 정답을 고정값에서 랜덤으로 만들기
+// 카운트 다운 추가
 
-namespace NumBaseballGameVer2
+/*
+namespace NumBaseballGameVer3
 {
     public static class Client
     {
         public static void Main()
         {
-            int AnswerNum = 456; // 정답
+            Random random = new Random(); // 랜덤 만들기
+
+
+            int AnswerNum = random.Next(100, 1000); // 100 이상 1000미만인 정수
+            List<int> AnswerNumList = new List<int>();  // 각 자릿수를 리스트에 담기
+            AnswerNumList.Add(AnswerNum % 10);
+            AnswerNumList.Add((AnswerNum % 100 - AnswerNum % 10) / 10);
+            AnswerNumList.Add((AnswerNum % 1000 - AnswerNum % 100) / 100);
+
+            while (true)
+            {
+                AnswerNum = random.Next(100, 1000); // 100 이상 1000미만인 정수
+
+                AnswerNumList = new List<int>();  // 각 자릿수를 리스트에 담기
+                AnswerNumList.Add(AnswerNum % 10);
+                AnswerNumList.Add((AnswerNum % 100 - AnswerNum % 10) / 10);
+                AnswerNumList.Add((AnswerNum % 1000 - AnswerNum % 100) / 100);
+
+
+                bool isSameValue1 = AnswerNumList[0] == AnswerNumList[1];
+                bool isSameValue2 = AnswerNumList[1] == AnswerNumList[2];
+                bool isSaneValue3 = AnswerNumList[2] == AnswerNumList[0];
+                bool isStop = (isSameValue1 || isSameValue2 || isSaneValue3) == false;
+
+
+                if (isStop)
+                {
+                    break;
+                }
+
+
+            }
+
+            Console.WriteLine($"연습용 정답은 [ {AnswerNum} ] 입니다.");
+
+            int Count = 1;  // 카운트 다운 변수 설정
+            int Turn = 3;   // 턴 수 설정
 
             while (true)    // 윈도우 창이 지속되도록 만들기
             {
+                Console.WriteLine("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+                Console.WriteLine($"[ {Count} ] 번째 턴입니다."); // 턴 알려주기.
+                Console.WriteLine($"[ {Turn - Count + 1} ] 번의 기회가 남았습니다.");
+                Count++;
+
+
                 Console.WriteLine("3 자리 정수를 입력하세요.");   // 사용자에게 명령하기
                 string input = Console.ReadLine();  // 사용자로부터 3자리 정수를 받아서 input에 대입
 
@@ -28,7 +71,7 @@ namespace NumBaseballGameVer2
                 {
                     if ((QuetionNum < 1000) && (QuetionNum > 99))   // 3자리 정수인지 확인하기
                     {
-                        Console.WriteLine($"당신이 입력한 정수는 {QuetionNum} 입니다.");
+                        Console.WriteLine($"당신이 입력한 정수는 [ {QuetionNum} ] 입니다.");
 
                         if (AnswerNum == QuetionNum)    // 정답인지 확인
                         {
@@ -39,11 +82,6 @@ namespace NumBaseballGameVer2
                         {
                             int StrikeNum = 0;  // 사용할 변수 초기화
                             int BallNum = 0;
-
-                            List<int> AnswerNumList = new List<int>();  // 각 자릿수를 리스트에 담기
-                            AnswerNumList.Add(AnswerNum % 10);
-                            AnswerNumList.Add((AnswerNum % 100 - AnswerNum % 10) / 10);
-                            AnswerNumList.Add((AnswerNum % 1000 - AnswerNum % 100) / 100);
 
                             List<int> QuestionNumList = new List<int>();
                             QuestionNumList.Add(QuetionNum % 10);
@@ -76,8 +114,8 @@ namespace NumBaseballGameVer2
 
 
                             // 스트라이크 수와 볼 수를 확인 후 출력하기
-                            Console.WriteLine($"스트라이크 개수는 {StrikeNum} 입니다.");
-                            Console.WriteLine($"볼 개수는 {BallNum} 입니다.");
+                            Console.WriteLine($"스트라이크 개수는 [ {StrikeNum} ] 입니다.");
+                            Console.WriteLine($"볼 개수는 [ {BallNum} ] 입니다.");
                         }
                     }
                     else // 3 자리 정수가 아니면
@@ -90,7 +128,13 @@ namespace NumBaseballGameVer2
                 {
                     Console.WriteLine("입력한 데이터가 정수가 아닙니다." +
                         "\n3 자리 정수를 입력하세요.");
-                    ;
+                }
+
+
+                if (Count == Turn + 1)
+                {
+                    Console.WriteLine("Game Over");
+                    break;
                 }
             }
         }

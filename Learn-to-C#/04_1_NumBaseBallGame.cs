@@ -5,6 +5,7 @@
 // 숫자와 자리가 같으면 스트라이크
 // 숫자만 같으면 볼
 // 일치하는 숫자가 하나도 없다면 아웃
+/*
 
 namespace NumBaseballGameVer1
 {
@@ -95,3 +96,5 @@ namespace NumBaseballGameVer1
         }
     }
 }
+
+*/
