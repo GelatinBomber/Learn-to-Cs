@@ -9,6 +9,7 @@
 
 // 수정 사항
 // 기존에 if로 자릿수를 하나하나 체크했는데, List를 이용해서 한번에 해보자.
+/*
 
 namespace NumBaseballGameVer2
 {
@@ -96,3 +97,4 @@ namespace NumBaseballGameVer2
     }
 }
 
+*/

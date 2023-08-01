@@ -11,6 +11,7 @@
 // 정답을 고정값에서 랜덤으로 만들기
 // 카운트 다운 추가
 
+/*
 namespace NumBaseballGameVer3
 {
     public static class Client
@@ -139,3 +140,5 @@ namespace NumBaseballGameVer3
         }
     }
 }
+
+*/
