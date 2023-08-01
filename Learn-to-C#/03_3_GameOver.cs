@@ -5,7 +5,11 @@
         bool isWallCrash = false;
         bool isSameX = xPlayer == xWallSize;
         bool isSameY = yPlayer == yWallSize;
-        if (isSameX || isSameY) { isWallCrash = true; }
+        if (isSameX || isSameY)
+        {
+            isWallCrash = true;
+            Console.WriteLine("벽과 충돌!! Game Over");
+        }
         return isWallCrash;
     }
 }

@@ -14,6 +14,7 @@ public static class Client
         int xPlayer = 8; int yPlayer = 8;
 
         bool isGameover = false;
+        
 
         while (!isGameover)
         {
@@ -28,6 +29,9 @@ public static class Client
 
 
             // 게임 오버
+            bool isWallCrash = false;
+            bool isSameX = xPlayer == xWallSize;
+            bool isSameY = yPlayer == yWallSize;
             isGameover = gameOver.WallCrash(ref xPlayer,ref yPlayer,xWallSize,yWallSize);
                 // 게임 오버가 되지 않는다. 수정하자.
 
