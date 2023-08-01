@@ -1,4 +1,4 @@
-﻿/*
+﻿
 
 namespace Earthworm
 {
@@ -16,8 +16,8 @@ namespace Earthworm
 
                 switch (cki.Key)
                 {
-                    case ConsoleKey.LeftArrow: { xPlayer -= 2; break; }
-                    case ConsoleKey.RightArrow: { xPlayer += 2; break; }
+                    case ConsoleKey.LeftArrow: { xPlayer --; break; }
+                    case ConsoleKey.RightArrow: { xPlayer ++; break; }
                     case ConsoleKey.UpArrow: { yPlayer--; break; }
                     case ConsoleKey.DownArrow: { yPlayer++; break; }
                 }
@@ -26,4 +26,3 @@ namespace Earthworm
     }
 }
 
-*/

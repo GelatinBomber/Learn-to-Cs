@@ -1,4 +1,4 @@
-﻿/*
+﻿
 
 namespace Earthworm
 {
@@ -6,31 +6,20 @@ namespace Earthworm
     {
         public void Wall(int xWallSize, int yWallSize)
         {
-            for (int i = 0; i < xWallSize; i++)
+            for (int i = 0; i < yWallSize; i++)
             {
-                Console.Write("■");
-            }
-            Console.WriteLine();
-
-            for (int i = 0; i < yWallSize - 2; i++)
-            {
-                Console.Write("■");
-                for (int j = 0; j < xWallSize - 2; j++)
+                for (int j = 0; j < xWallSize; j++)
                 {
-                    Console.Write("□");
+                    if ((i == 0)||(i == yWallSize -1)||(j == 0)||(j == yWallSize - 1))
+                    {
+                        Console.SetCursorPosition(i,j);
+                        Console.Write("■");
+                    }
+                    //Console.WriteLine();
                 }
-                Console.WriteLine("■");
+                //Console.WriteLine();
             }
-
-            for (int i = 0; i < xWallSize; i++)
-            {
-                Console.Write("■");
-            }
-            Console.WriteLine();
         }
-
-        //public bool GameOver(ref int xP)
     }
 }
 
-*/

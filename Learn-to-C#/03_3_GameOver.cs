@@ -1,4 +1,4 @@
-﻿/*
+﻿
 
 namespace Earthworm
 {
@@ -19,4 +19,3 @@ namespace Earthworm
     }
 }
 
-*/
